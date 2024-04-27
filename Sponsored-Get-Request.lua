@@ -7,7 +7,7 @@ BASE_URL = "https://dummyjson.com/products"
 ReceivedData = ReceivedData or {}
 
 --[[
-    Handler to send 1 $0RBT and a GET request to the `0rbit` process.
+    Handler to send GET request to the `0rbit` process.
 ]]
 Handlers.add(
     "Get-Request",
