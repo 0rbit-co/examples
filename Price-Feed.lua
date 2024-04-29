@@ -9,7 +9,7 @@ BASE_URL = "https://api.coingecko.com/api/v3/simple/price"
 FEE_AMOUNT = "1000000000000" -- 1 $0RBT
 
 --[[
-    Mapping to store the token prices with their coingecko id
+    Mapping to store the Token Details
 ]]
 TOKEN_PRICES = TOKEN_PRICES or {
     BTC = {
@@ -35,12 +35,6 @@ ID_TOKEN = ID_TOKEN or {
 }
 
 --[[
-    Mapping to store
-]]
-LOGS = LOGS or {}
-
-
---[[
     Function to get the price of a token
 ]]
 function getTokenPrice(msg)
@@ -51,17 +45,6 @@ function getTokenPrice(msg)
     else
         Handlers.utils.reply(tostring(price))(msg)
     end
-    table.insert(
-        LOGS,
-        {
-            From = msg.From,
-            Tag = "Request-Add-Token",
-            Data = {
-                Token = token,
-                Message = "Success"
-            }
-        }
-    )
 end
 
 --[[
@@ -110,7 +93,7 @@ Handlers.add(
 
 
 --[[
-    CRON Handler TO UPDATE THE TOKEN PRICES
+    CRON Handler to fetch the token prices using 0rbit in a defined interval.
 ]]
 Handlers.add(
     "CronTick",
