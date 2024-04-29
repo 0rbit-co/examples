@@ -13,9 +13,8 @@ NEWS = NEWS or {}
 --[[
     Function to send the latest news.
 ]]
-function sendNews(msg)
+function getNews(msg)
     local news = json.encode(NEWS)
-    print("News sent", news)
     Handlers.utils.reply(news)(msg)
 end
 
@@ -52,7 +51,7 @@ function receiveData(msg)
             }
             table.insert(NEWS, article)
         end
-        print("News Updated", json.encode(NEWS))
+        print("News Updated")
     else
         print("Error in fetching news")
     end
@@ -64,7 +63,7 @@ end
 Handlers.add(
     "GetNews",
     Handlers.utils.hasMatchingTag("Action", "Get-News"),
-    sendNews
+    getNews
 )
 
 --[[
