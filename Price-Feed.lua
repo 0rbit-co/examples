@@ -106,6 +106,6 @@ Handlers.add(
 ]]
 Handlers.add(
     "ReceivingData",
-    Handlers.utils.hasMatchingTag("Action", "Recieve-Response"),
+    Handlers.utils.hasMatchingTag("Action", "Receive-Response"),
     receiveData
 )
