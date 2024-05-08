@@ -27,7 +27,7 @@ Handlers.add(
 ]]
 Handlers.add(
     "Receive-Data",
-    Handlers.utils.hasMatchingTag("Action", "Receive-Data-Feed"),
+    Handlers.utils.hasMatchingTag("Action", "Recieve-Response"),
     function(msg)
         local res = json.decode(msg.Data)
         ReceivedData = res
