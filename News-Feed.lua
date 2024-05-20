@@ -67,11 +67,11 @@ Handlers.add(
 )
 
 --[[
-    CRON Handler to fetch the news using 0rbit in a defined interval.
+    Fetch News Handler to fetch the news using 0rbit.
 ]]
 Handlers.add(
-    "CronTick",
-    Handlers.utils.hasMatchingTag("Action", "Cron"),
+    "FetchNews",
+    Handlers.utils.hasMatchingTag("Action", "Fetch-News"),
     fetchNews
 )
 

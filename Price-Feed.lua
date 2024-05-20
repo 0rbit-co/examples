@@ -22,16 +22,17 @@ TOKEN_PRICES = TOKEN_PRICES or {
         price = 0,
         last_update_timestamp = 0
     },
-    SOL = {
-        coingecko_id = "solana",
+    AR = {
+        coingecko_id = "arweave",
         price = 0,
         last_update_timestamp = 0
-    }
+    },
+
 }
 ID_TOKEN = ID_TOKEN or {
     bitcoin = "BTC",
     ethereum = "ETH",
-    solana = "SOL"
+    arweave = "AR"
 }
 
 --[[
@@ -91,13 +92,12 @@ Handlers.add(
     getTokenPrice
 )
 
-
 --[[
-    CRON Handler to fetch the token prices using 0rbit in a defined interval.
+    Handler to fetch the token prices by sending request to 0rbit
 ]]
 Handlers.add(
-    "CronTick",
-    Handlers.utils.hasMatchingTag("Action", "Cron"),
+    "FetchPrice",
+    Handlers.utils.hasMatchingTag("Action", "Fetch-Price"),
     fetchPrice
 )
 
