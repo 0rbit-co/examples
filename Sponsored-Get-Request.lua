@@ -1,6 +1,6 @@
 local json = require("json")
 
-_0RBIT = "WSXUI2JjYUldJ7CKq9wE1MGwXs-ldzlUlHOQszwQe0s"
+_0RBIT = "BaMK1dfayo75s3q1ow6AO64UDpD9SEFbeE8xYrY2fyQ"
 
 BASE_URL = "https://dummyjson.com/products"
 
