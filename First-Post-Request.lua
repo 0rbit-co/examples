@@ -37,7 +37,7 @@ Handlers.add(
             Recipient = _0RBIT,
             Quantity = FEE_AMOUNT,
             ["X-Url"] = BASE_URL,
-            ["X-Action"] = "Post-Real-Data"
+            ["X-Action"] = "Get-Real-Data"
         })
         print(Colors.green .. "You have sent a GET Request to the 0rbit process.")
     end
