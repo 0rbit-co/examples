@@ -28,8 +28,8 @@ ReceivedData = ReceivedData or {}
     Handler to send 1 $0RBT and a GET request to the `0rbit` process.
 ]]
 Handlers.add(
-    "Get-Request",
-    Handlers.utils.hasMatchingTag("Action", "First-Get-Request"),
+    "Post-Request",
+    Handlers.utils.hasMatchingTag("Action", "First-Post-Request"),
     function(msg)
         Send({
             Target = _0RBT_TOKEN,
@@ -37,9 +37,10 @@ Handlers.add(
             Recipient = _0RBIT,
             Quantity = FEE_AMOUNT,
             ["X-Url"] = BASE_URL,
-            ["X-Action"] = "Get-Real-Data"
+            ["X-Action"] = "Post-Real-Data",
+            ["X-Body"] = BODY
         })
-        print(Colors.green .. "You have sent a GET Request to the 0rbit process.")
+        print(Colors.green .. "You have sent a POST Request to the 0rbit process.")
     end
 )
 
